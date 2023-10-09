@@ -1,0 +1,95 @@
+﻿@model IEnumerable<DTO.SalaryInfo>
+@{
+    List<DTO.Employee> emps = ViewBag.emps;
+    List<DTO.Bank> Bank = ViewBag.banks;
+    List<DTO.BankBranch> BankBranch = ViewBag.bankbranchs;
+}
+<style>
+    .header {
+        background-color: #293846;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+        .header h2 {
+            margin: 0;
+            font-size: 36px;
+        }
+</style>
+<div class="container">
+    <div class="header">
+        <h2 style="">SalaryInfoes</h2>
+    </div>
+
+    <div style="">
+        <a class="btn btn-success" href="@Url.Action("AddEdit","SalaryInfo",new{ID=0})">
+            <span class="fa fa-plus">&nbsp;&nbsp;Add</span>
+        </a>
+    </div>
+    <table class="table table-striped table-bordered table-hover dataTables-example">
+
+        <thead>
+            <tr>
+                <th style="text-align:center">ID</th>
+                <th style="text-align:center">Employee</th>
+                <th style="text-align:center">BasicSalary</th>
+                <th style="text-align:center">BankSwift</th>
+                <th style="text-align:center">BankAccountNo</th>
+                <th style="text-align:center">Bank</th>
+                <th style="text-align:center">BankBranch</th>
+                <th style="text-align:center">IsCurrent</th>
+                <th style="text-align:center" class="class=" col-sm-4 col-sm-offset-1 col-md-6 col-md-offset-1 col-lg-2 col-lg-offset-1"> <span>Actions</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var SalaryInfo in Model)
+            {
+
+                <tr id="tr_@SalaryInfo.ID" class="gradeX">
+                    <td style="text-align:center">@Html.DisplayFor(e=>SalaryInfo.ID)</td>
+                    <td style="text-align:center">
+                        @emps.FirstOrDefault(e=>e.ID == SalaryInfo.EmployeeID).ForeignFirstName
+                    </td>
+                    <td style="text-align:center">
+                        @Html.DisplayFor(e=>SalaryInfo.BasicSalary)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>SalaryInfo.BankSwift)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>SalaryInfo.BankAccountNo)
+                    </td>
+                     <td style="text-align:center">
+                        @Bank.FirstOrDefault(e=>e.ID == SalaryInfo.BankID).BankName
+                    </td>
+                     <td style="text-align:center">
+                        @BankBranch.FirstOrDefault(e=>e.ID == SalaryInfo.BankBranchID).BranchName
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>SalaryInfo.IsCurrent)
+                    </td>
+                    <td style="text-align:center">
+                        <a href="@Url.Action("AddEdit","SalaryInfo",new{id=@SalaryInfo.ID})" class="btn btn-warning btn-circle  btn-outline"><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-danger btn-circle  btn-outline" onclick="javascript:Delete('@Url.Action("Delete","SalaryInfo")',@SalaryInfo.ID)"> <i class="fa fa-trash"></i></a>
+                    </td>
+
+                </tr>
+
+
+
+
+
+            }
+        </tbody>
+
+    </table>
+    <div class="form-group">
+        <div class="row">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+        </div>
+    </div>
+</div>

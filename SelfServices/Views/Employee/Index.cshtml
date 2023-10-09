@@ -1,0 +1,187 @@
+﻿@model IEnumerable<DTO.Employee>
+@{
+    //List<DTO.Lookup> complaintStatue = ViewBag.complaintStatue;
+}
+<style>
+    .header {
+        background-color: #293846;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+        .header h2 {
+            margin: 0;
+            font-size: 36px;
+        }
+</style>
+<div class="container">
+    <div class="header">
+        <h2 style="">Employees</h2>
+    </div>
+
+    <div style="">
+        <a class="btn btn-success" href="@Url.Action("AddEdit","Employee",new{ID=0})">
+            <span class="fa fa-plus">&nbsp;&nbsp;Add</span>
+        </a>
+    </div>
+    <table class="table table-striped table-bordered table-hover dataTables-example">
+
+        <thead>
+            <tr>
+                <th style="text-align:center">ID</th>
+                <th style="text-align:center">FirstName</th>
+                <th style="text-align:center">SecondName</th>
+                <th style="text-align:center">ThirdName</th>
+                <th style="text-align:center">LastName</th>
+                <th style="text-align:center">ForeignFirstName</th>
+                <th style="text-align:center">ForeignSecondName</th>
+                <th style="text-align:center">ForeignThirdName</th>
+                <th style="text-align:center">ForeignLastName</th>
+                <th style="text-align:center">MotherName</th>
+                <th style="text-align:center">ForeignMotherName</th>
+                <th style="text-align:center">DateOfBirth</th>
+                <th style="text-align:center">Phone</th>
+                <th style="text-align:center">Mobile</th>
+                <th style="text-align:center">Email</th>
+                <th style="text-align:center">Gender</th>
+                <th style="text-align:center">Nationality</th>
+                <th style="text-align:center">PassportNumber</th>
+                <th style="text-align:center">SocialSecurityNO</th>
+                <th style="text-align:center">NationalNo</th>
+                <th style="text-align:center">IqamaNO</th>
+                <th style="text-align:center">MaritalStatus</th>
+                <th style="text-align:center">Country</th>
+                <th style="text-align:center">ManagerID</th>
+                <th style="text-align:center">ManagerEmail</th>
+                <th style="text-align:center">FingerprintNo</th>
+                <th style="text-align:center">ERPId</th>
+                <th style="text-align:center">JsonBody</th>
+                <th style="text-align:center">JobDescription</th>
+                <th style="text-align:center">Grade</th>
+                <th style="text-align:center">Leavebalance</th>
+
+                <th style="text-align:center" class="class=" col-sm-4 col-sm-offset-1 col-md-6 col-md-offset-1 col-lg-2 col-lg-offset-1"> <span>Actions</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Employee in Model)
+            {
+
+                <tr id="tr_@Employee.ID" class="gradeX">
+                    <td style="text-align:center">@Html.DisplayFor(e=>Employee.ID)</td>
+                    <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.FirstName)
+                    </td>
+                    <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.SecondName)
+                    </td>  
+                    <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.ThirdName)
+                    </td>
+                    <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.LastName)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.ForeignFirstName)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.ForeignSecondName)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.ForeignThirdName)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.ForeignLastName)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.MotherName)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.ForeignMotherName)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.DateOfBirth)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.Phone)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.Mobile)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.Email)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.Gender.Name)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.Nationality.Name)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.PassportNumber)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.SocialSecurityNO)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.NationalNo)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.IqamaNO)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.MaritalStatus.Name)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.Country.CountryName)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.ManagerId)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.ManagerEmail)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.FingerprintNo)
+                    </td>
+                    <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.ERPId)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.JsonBody)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.JobDescription.Name)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.Grade.Name)
+                    </td>
+                     <td style="text-align:center">
+                        @Html.DisplayFor(e=>Employee.Leavebalance)
+                    </td>
+
+                    <td style="text-align:center">
+                        <a href="@Url.Action("AddEdit","Employee",new{id=@Employee.ID})" class="btn btn-warning btn-circle  btn-outline"><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-danger btn-circle  btn-outline" onclick="javascript:Delete('@Url.Action("Delete","Employee")',@Employee.ID)"> <i class="fa fa-trash"></i></a>
+                    </td>
+
+                </tr>
+
+
+
+
+
+            }
+        </tbody>
+
+    </table>
+    <div class="form-group">
+        <div class="row">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+        </div>
+    </div>
+</div>

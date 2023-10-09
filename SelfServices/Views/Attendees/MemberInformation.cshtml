@@ -1,0 +1,210 @@
+﻿@model DTO.Employee
+<style>
+    .header
+    {
+        background-color: #293846;
+        color: #fff;
+        padding: 20px 0;
+        text-align: left;
+    }
+    .header h2 {
+            margin: 0;
+            font-size: 36px;
+    }
+
+    .info1{
+        display:flex;
+        flex-direction:row;
+    }
+
+</style>
+<div class="header">
+    <h2>Personal Information</h2>
+</div>
+<div class="info1">
+    <div>
+      <img src="~/images/Photo Fixed.png"width="100px"/>
+    </div>
+    <div style="width:80%;">
+        <div class="form-group">
+            <div class="row">
+
+                <div style="width:50%;">
+                    <span class="col-sm-4 sm-offset-1"><label class="control-label">Employee Name :</label></span>
+                    <span class="col-sm-3">
+                        @Html.DisplayFor(e=>e.ForeignFirstName,new { @class="form-control"})
+                    </span>
+                </div>
+
+                <div style ="width:50%;">
+                    <span class="col-sm-4 sm-offset-1"><label class="control-label">Date Of Birth :</label></span>
+                    <span class="col-sm-3">
+                        @Html.DisplayFor(e=>e.DateOfBirth,new { @class="form-control"})
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+
+                <div style="width:50%;">
+                    <span class="col-sm-4 sm-offset-1"><label class="control-label">EmployeeNo :</label></span>
+                    <span class="col-sm-3">
+                        @Html.DisplayFor(e=>e.IqamaNO,new { @class="form-control"})
+                    </span>
+                </div>
+
+                <div style="width:50%;">
+                    <span class="col-sm-4 sm-offset-1"><label class="control-label">Annual leave balance :</label></span>
+                    <span class="col-sm-3">
+                        @Html.DisplayFor(e=>e.Leavebalance,new { @class="form-control"})
+                    </span>
+                </div>
+
+            </div>
+        </div> 
+        <div class="form-group">
+            <div class="row">
+
+                <div style="width:50%;">
+                    <span class="col-sm-4 sm-offset-1"><label class="control-label">Department :</label></span>
+                    <span class="col-sm-3">
+                        @Html.DisplayFor(e=>e.Country,new { @class="form-control"})
+                    </span>
+                </div>
+
+                <div style="width:50%;">
+                    <span class="col-sm-4 sm-offset-1"><label class="control-label">Direct Manager :</label></span>
+                    <span class="col-sm-3">
+                        @Html.DisplayFor(e=>e.ManagerId,new { @class="form-control"})
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+
+                <div style="width:50%;">
+                    <span class="col-sm-4 sm-offset-1"><label class="control-label">Job Title :</label></span>
+                    <span class="col-sm-3">
+                        @Html.DisplayFor(e=>e.JobDescription.Name,new { @class="form-control"})
+                    </span>
+                </div>
+
+                <div style="width:50%;">
+                    <span class="col-sm-4 sm-offset-1"><label class="control-label">Sector Manager :</label></span>
+                    <span class="col-sm-3">
+                        @Html.DisplayFor(e=>e.ManagerId,new { @class="form-control"})
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+
+                <div style="width:50%;">
+                    <span class="col-sm-4 sm-offset-1"><label class="control-label">Grade :</label></span>
+                    <span class="col-sm-3">
+                        @Html.DisplayFor(e=>e.Grade.Name,new { @class="form-control"})
+                    </span>
+                </div>
+
+                <div style="width:50%;">
+                    <span class="col-sm-4 sm-offset-1"><label class="control-label">Email :</label></span>
+                    <span class="col-sm-3">
+                        @Html.DisplayFor(e=>e.Email,new { @class="form-control"})
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+
+                <div style="width:50%;">
+                    <span class="col-sm-4 sm-offset-1"><label class="control-label">Nationalty :</label></span>
+                    <span class="col-sm-3">
+                        @Html.DisplayFor(e=>e.Nationality.Name,new { @class="form-control"})
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header">
+    <h2>Salary Information</h2>
+</div>
+<div>
+<div class="form-group">
+    <div class="row">
+
+        <div style="width:50%;">
+            <span class="col-sm-4 sm-offset-1"><label class="control-label">Main Salary :</label></span>
+            <span class="col-sm-3">
+                @Html.DisplayFor(e=>e.Grade.Name,new { @class="form-control"})
+            </span>
+        </div>
+
+        <div style="width:50%;">
+            <span class="col-sm-4 sm-offset-1"><label class="control-label">Bank Name :</label></span>
+            <span class="col-sm-3">
+                @Html.DisplayFor(e=>e.Email,new { @class="form-control"})
+            </span>
+        </div>
+
+    </div>
+</div>
+<div class="form-group">
+    <div class="row">
+        <div style="width:50%;">
+            <span class="col-sm-4 sm-offset-1"><label class="control-label">Housing allowance :</label></span>
+            <span class="col-sm-3">
+                @Html.DisplayFor(e=>e.Grade.Name,new { @class="form-control"})
+            </span>
+        </div>
+
+        <div style="width:50%;">
+            <span class="col-sm-4 sm-offset-1"><label class="control-label">Account No :</label></span>
+            <span class="col-sm-3">
+                @Html.DisplayFor(e=>e.Email,new { @class="form-control"})
+            </span>
+        </div>
+
+    </div>
+</div>
+<div class="form-group">
+    <div class="row">
+        <div style="width:50%;">
+                <span class="col-sm-4 sm-offset-1"><label class="control-label">Transfer allowance :</label></span>
+            <span class="col-sm-3">
+                @Html.DisplayFor(e=>e.Grade.Name,new { @class="form-control"})
+            </span>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <div class="row">
+        <div style="width:50%;">
+                <span class="col-sm-4 sm-offset-1"><label class="control-label">Call allowance :</label></span>
+            <span class="col-sm-3">
+                @Html.DisplayFor(e=>e.Grade.Name,new { @class="form-control"})
+            </span>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <div class="row">
+        <div style="width:50%;">
+                <span class="col-sm-4 sm-offset-1"><label class="control-label">total salary :</label></span>
+            <span class="col-sm-3">
+                @Html.DisplayFor(e=>e.Grade.Name,new { @class="form-control"})
+            </span>
+        </div>
+
+    </div>
+</div>
+
+</div>

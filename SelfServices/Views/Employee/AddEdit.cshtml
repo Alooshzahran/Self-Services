@@ -1,0 +1,379 @@
+﻿@model DTO.Employee
+@using Portal.Helper;
+@using (Html.BeginForm("Save", "Employee", FormMethod.Post))
+{
+    <div class="ibox-content">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-11">
+                    @Html.Adaa_HiddenFor(e=>e.ID)
+                    @Html.Adaa_HiddenFor(e=>e.CreationDate)
+                    @Html.Adaa_HiddenFor(e=>e.CreationUserID)
+                    @Html.Adaa_HiddenFor(e=>e.IsDeleted)
+                    @Html.Adaa_HiddenFor(e=>e.ModifyDate)
+
+                    <span class="help-block m-b-none"></span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">FirstName :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.FirstName,new { @class="form-control"})
+
+
+                    </span>
+                </div>
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">SecondName :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.SecondName,new {@class="form-control"})
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">BirthDate :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.ThirdName,new { @class="form-control"})
+
+
+                    </span>
+                </div>  
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">BirthDate :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.LastName,new { @class="form-control"})
+
+
+                    </span>
+                </div>
+
+            </div>
+        </div> 
+        <div class="form-group">
+            <div class="row">
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">ThirdName :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.ThirdName,new { @class="form-control"})
+
+
+                    </span>
+                </div>  
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">LastName :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.LastName,new { @class="form-control"})
+
+
+                    </span>
+                </div>
+
+            </div>
+        </div> 
+        <div class="form-group">
+            <div class="row">
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">ForeignFirstName :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.ForeignFirstName,new { @class="form-control"})
+
+
+                    </span>
+                </div>  
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">ForeignSecondName :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.ForeignSecondName,new { @class="form-control"})
+
+
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">ForeignThirdName :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.ForeignThirdName,new { @class="form-control"})
+
+
+                    </span>
+                </div>  
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">ForeignLastName :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.ForeignLastName,new { @class="form-control"})
+
+
+                    </span>
+                </div>
+
+            </div>
+        </div> 
+        <div class="form-group">
+            <div class="row">
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">MotherName :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.MotherName,new { @class="form-control"})
+
+
+                    </span>
+                </div>  
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">ForeignMotherName :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.ForeignMotherName,new { @class="form-control"})
+
+
+                    </span>
+                </div>
+
+            </div>
+        </div> 
+        <div class="form-group">
+            <div class="row">
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">DateOfBirth :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.DateOfBirth,new { @class="form-control", @type="date"})
+
+
+                    </span>
+                </div>  
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">Phone :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.Phone,new { @class="form-control"})
+
+
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">Mobile :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.Mobile,new { @class="form-control"})
+
+
+                    </span>
+                </div>  
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">Email :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.Email,new { @class="form-control"})
+
+
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">Gender  :</label></span>
+                    <span class="col-sm-3">
+                        @Html.DropDownListFor(e =>e.GenderID, ViewBag.AllGender as SelectList,"Choose Empolyee" , new { @class="form-control"})
+                    </span>
+                </div>
+                 <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">Nationality  :</label></span>
+                    <span class="col-sm-3">
+                        @Html.DropDownListFor(e =>e.NationalityID, ViewBag.AllNationality as SelectList,"Choose Empolyee" , new { @class="form-control"})
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">PassportNumber :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.PassportNumber,new { @class="form-control"})
+
+
+                    </span>
+                </div>  
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">SocialSecurityNO :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.SocialSecurityNO,new { @class="form-control"})
+
+
+                    </span>
+                </div>
+
+            </div>
+        </div> 
+        <div class="form-group">
+            <div class="row">
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">NationalNo :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.NationalNo,new { @class="form-control"})
+
+
+                    </span>
+                </div>  
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">IqamaNO :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.IqamaNO,new { @class="form-control"})
+
+
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">MaritalStatus  :</label></span>
+                    <span class="col-sm-3">
+                        @Html.DropDownListFor(e =>e.MaritalStatusID, ViewBag.AllMaritalStatus as SelectList,"Choose MaritalStatus" , new { @class="form-control"})
+                    </span>
+                </div>
+                 <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">Country  :</label></span>
+                    <span class="col-sm-3">
+                        @Html.DropDownListFor(e =>e.CountryID, ViewBag.AllCountry as SelectList,"Choose Country" , new { @class="form-control"})
+                    </span>
+                </div>
+
+            </div>
+        </div> 
+        <div class="form-group">
+            <div class="row">
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">Manager  :</label></span>
+                    <span class="col-sm-3">
+                        @Html.DropDownListFor(e =>e.ManagerId, ViewBag.AllEmployee as SelectList,"Choose Manager" , new { @class="form-control"})
+                    </span>
+                </div>
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">ManagerEmail :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.ManagerEmail,new { @class="form-control"})
+
+
+                    </span>
+                </div>
+
+            </div>
+        </div> <div class="form-group">
+            <div class="row">
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">FingerprintNo :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.FingerprintNo,new { @class="form-control",@type="number"})
+
+
+                    </span>
+                </div>  
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">JsonBody :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.JsonBody,new { @class="form-control"})
+
+
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">ERPId :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.ERPId,new { @class="form-control"})
+
+
+                    </span>
+                </div>
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">JobDescription :</label></span>
+                    <span class="col-sm-3">
+                        @Html.DropDownListFor(e =>e.JobDescriptionID, ViewBag.AllJobDescription as SelectList,"Choose JobDescription" , new { @class="form-control"})
+                    </span>
+                </div>
+
+
+
+            </div>
+        </div> 
+        <div class="form-group">
+            <div class="row">
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">Leavebalance :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.Leavebalance,new { @class="form-control"})
+
+
+                    </span>
+                </div>
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">Grade :</label></span>
+                    <span class="col-sm-3">
+                        @Html.DropDownListFor(e =>e.GradeID, ViewBag.AllGrade as SelectList,"Choose Grade" , new { @class="form-control"})
+                    </span>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+
+                <div class="col-sm-12 col-sm-offset-9  col-md-12 col-md-offset-8  col-lg-4 col-lg-offset-5">
+                    <span>
+                        <a href="@Url.Action("Index","Employee")" class="btn btn-warning" title="اغلاق">
+                            <i class="fa fa-close"></i>
+                            &ensp; اغلاق
+                        </a>
+                    </span>
+                    <span>
+                        <button class="btn btn-primary" type="submit" title="حفظ">
+                            <i class="fa fa-save"></i>
+                            &ensp; Save
+                        </button>
+                    </span>
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+}

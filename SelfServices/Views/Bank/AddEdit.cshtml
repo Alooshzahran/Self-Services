@@ -1,0 +1,63 @@
+﻿@model DTO.Bank
+@using Portal.Helper;
+@using (Html.BeginForm("Save", "Bank", FormMethod.Post))
+{
+    <div class="ibox-content">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-11">
+                    @Html.Adaa_HiddenFor(e=>e.ID)
+                    @Html.Adaa_HiddenFor(e=>e.CreationDate)
+                    @Html.Adaa_HiddenFor(e=>e.CreationUserID)
+                    @Html.Adaa_HiddenFor(e=>e.IsDeleted)
+                    @Html.Adaa_HiddenFor(e=>e.ModifyDate)
+
+                    <span class="help-block m-b-none"></span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">Name :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.BankName,new { @class="form-control"})
+
+
+                    </span>
+                </div>
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">Arabic Name :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.BankNameAR,new {@class="form-control"})
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+
+                <div class="col-sm-12 col-sm-offset-9  col-md-12 col-md-offset-8  col-lg-4 col-lg-offset-5">
+                    <span>
+                        <a href="@Url.Action("Index","Bank")" class="btn btn-warning" title="اغلاق">
+                            <i class="fa fa-close"></i>
+                            &ensp; اغلاق
+                        </a>
+                    </span>
+                    <span>
+                        <button class="btn btn-primary" type="submit" title="حفظ">
+                            <i class="fa fa-save"></i>
+                            &ensp; Save
+                        </button>
+                    </span>
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+}

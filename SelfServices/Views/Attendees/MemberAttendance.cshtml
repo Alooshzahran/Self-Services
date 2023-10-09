@@ -1,0 +1,50 @@
+﻿@model List<DTO.TimeAttendance>
+<table class="table table-striped table-bordered table-hover dataTables-example">
+
+    <thead>
+        <tr>
+            <th style="text-align:center">Day</th>
+            <th style="text-align:center">Date</th>
+            <th style="text-align:center">Entrance Time</th>
+            <th style="text-align:center">Leave Time</th>
+            <th style="text-align:center">Status</th>
+            <th style="text-align:center">Justification</th>
+            <th style="text-align:center">Approve</th>
+            <th style="text-align:center">Reject</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Attendance in Model)
+        {
+            <tr id="tr_@Attendance.ID" class="gradeX">
+
+                <td style="text-align:center">
+                    <img src="~/images/Photo Fixed.png">
+                </td>
+                <td style="text-align:center">
+                    @Html.DisplayFor(e=>Attendance)
+                </td>
+                <td style="text-align:center">
+                    <a href="">View Attendance</a>
+                </td>
+                <td style="text-align:center">
+                    <a href="">View Information</a>
+                </td>
+                <td style="text-align:center">
+                    <a href="">View Information</a>
+                </td>
+                <td style="text-align:center">
+                    <a href="">View Information</a>
+                </td>
+                <td style="text-align:center">
+                    <a href="">View Information</a>
+                </td>
+
+                <td style="text-align:center" class="col-sm-4 col-sm-offset-1 col-md-6 col-md-offset-1 col-lg-2 col-lg-offset-1">
+                    <a style="text-decoration:underline" href="@Url.Action("MainPage","SubscriperComplaint",new{id=@Attendance.ID})">yes</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

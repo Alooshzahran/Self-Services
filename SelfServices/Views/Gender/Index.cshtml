@@ -1,0 +1,73 @@
+﻿@model IEnumerable<DTO.Gender>
+@{
+    //List<DTO.Lookup> complaintStatue = ViewBag.complaintStatue;
+}
+<style>
+    .header {
+        background-color: #293846;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+        .header h2 {
+            margin: 0;
+            font-size: 36px;
+        }
+</style>
+<div class="container">
+    <div class="header">
+        <h2 style="">Genders</h2>
+    </div>
+
+    <div style="">
+        <a class="btn btn-success" href="@Url.Action("AddEdit","Gender",new{ID=0})">
+            <span class="fa fa-plus">&nbsp;&nbsp;Add</span>
+        </a>
+    </div>
+    <table class="table table-striped table-bordered table-hover dataTables-example">
+
+        <thead>
+            <tr>
+                <th style="text-align:center">ID</th>
+                <th style="text-align:center">Name</th>
+                <th style="text-align:center">Arabic Name</th>
+                <th style="text-align:center" class="class=" col-sm-4 col-sm-offset-1 col-md-6 col-md-offset-1 col-lg-2 col-lg-offset-1"> <span>Actions</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Gender in Model)
+            {
+
+                <tr id="tr_@Gender.ID" class="gradeX">
+                    <td style="text-align:center">@Html.DisplayFor(e=>Gender.ID)</td>
+                    <td style="text-align:center">
+                        @Html.DisplayFor(e=>Gender.Name)
+                    </td>
+                    <td style="text-align:center">
+                        @Html.DisplayFor(e=>Gender.NameAR)
+                    </td>
+                    <td style="text-align:center">
+                        <a href="@Url.Action("AddEdit","Gender",new{id=@Gender.ID})" class="btn btn-warning btn-circle  btn-outline"><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-danger btn-circle  btn-outline" onclick="javascript:Delete('@Url.Action("Delete","Gender")',@Gender.ID)"> <i class="fa fa-trash"></i></a>
+                    </td>
+
+                </tr>
+
+
+
+
+
+            }
+        </tbody>
+
+    </table>
+    <div class="form-group">
+        <div class="row">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+        </div>
+    </div>
+</div>

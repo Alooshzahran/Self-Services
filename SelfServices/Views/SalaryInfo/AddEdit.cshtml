@@ -1,0 +1,109 @@
+﻿@model DTO.SalaryInfo
+@using Portal.Helper;
+@using (Html.BeginForm("Save", "SalaryInfo", FormMethod.Post))
+{
+    <div class="ibox-content">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-11">
+                    @Html.Adaa_HiddenFor(e=>e.ID)
+                    @Html.Adaa_HiddenFor(e=>e.CreationDate)
+                    @Html.Adaa_HiddenFor(e=>e.CreationUserID)
+                    @Html.Adaa_HiddenFor(e=>e.IsDeleted)
+                    @Html.Adaa_HiddenFor(e=>e.ModifyDate)
+
+                    <span class="help-block m-b-none"></span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">Employee :</label></span>
+                    <span class="col-sm-3">
+                        @Html.DropDownListFor(e =>e.EmployeeID, ViewBag.AllEmployee as SelectList,"Choose Empolyee" , new { @class="form-control"})
+                    </span>
+                </div>
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">Bank Branch :</label></span>
+                    <span class="col-sm-3">
+                        @Html.DropDownListFor(e =>e.BankBranchID, ViewBag.AllBankBranch as SelectList,"Choose BankBranch" , new { @class="form-control"})
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">Bank Account Number :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.BankAccountNo,new {@class="form-control"})
+                    </span>
+                </div>
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">BankSwift :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.BankSwift,new {@class="form-control"})
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">Basic Salary :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.BasicSalary,new {@class="form-control", @type="Number" , @step="0.1"})
+                    </span>
+                </div>
+           
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">Is Current :</label></span>
+                    <span class="col-sm-3">
+                        @Html.TextBoxFor(e=>e.IsCurrent,new {@type="range", @min="0" , @max="1"})
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+
+                <div>
+                    <span class="col-sm-2 sm-offset-1"><label class="control-label">Bank :</label></span>
+                    <span class="col-sm-3">
+                        @Html.DropDownListFor(e =>e.BankID, ViewBag.AllBank as SelectList,"Choose Bank" , new { @class="form-control"})
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+
+                <div class="col-sm-12 col-sm-offset-9  col-md-12 col-md-offset-8  col-lg-4 col-lg-offset-5">
+                    <span>
+                        <a href="@Url.Action("Index","SalaryInfo")" class="btn btn-warning" title="اغلاق">
+                            <i class="fa fa-close"></i>
+                            &ensp; اغلاق
+                        </a>
+                    </span>
+                    <span>
+                        <button class="btn btn-primary" type="submit" title="حفظ">
+                            <i class="fa fa-save"></i>
+                            &ensp; Save
+                        </button>
+                    </span>
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+}

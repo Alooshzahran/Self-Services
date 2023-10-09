@@ -1,0 +1,113 @@
+﻿@model List<DTO.TimeAttendance>
+@{
+    DateTime Sun = ViewBag.Sun;
+    int day = Sun.Day;
+    
+    var days = Sun.AddDays(1).Day;
+
+
+}
+<head>
+</head>
+<div class="container">
+    <div class="form-group" style="border-style:solid;border-color:black">
+        <div style="display:flex;flex-direction:row">
+            <div style="width:70%;">
+                   <table style="text-align:center;width:100%">
+                       <tr>
+                           <th>@day</th>
+                        <th>@Sun.AddDays(1).Day</th>
+                        <th>@Sun.AddDays(2).Day</th>
+                        <th>@Sun.AddDays(3).Day</th>
+                        <th>@Sun.AddDays(4).Day</th>
+                        <th>@Sun.AddDays(5).Day</th>
+                        <th>@Sun.AddDays(6).Day</th>
+                       </tr>
+                       <tr>
+                          <th>Sun</th>
+                          <th>Mon</th>
+                          <th>Tue</th>
+                          <th>Wed</th>
+                          <th>Thu</th>
+                          <th>Fri</th>
+                          <th>Sat</th>
+                       </tr>
+                       <tr style="background-color:lightgray">
+                          <th>08:00</th>
+                          <th>08:00</th>
+                          <th>08:00</th>
+                          <th>08:00</th>
+                          <th>09:00</th>
+                          <th>08:00</th>
+                          <th>08:00</th>
+                       </tr> 
+                       <tr>
+                            <th>08:00</th>
+                            <th>08:00</th>
+                            <th>08:00</th>
+                            <th>08:00</th>
+                            <th>09:00</th>
+                            <th>08:00</th>
+                            <th>08:00</th>
+                       </tr> 
+                       <tr>
+                            <th>15:00</th>
+                            <th>15:00</th>
+                            <th>15:00</th>
+                            <th>15:00</th>
+                            <th>15:00</th>
+                            <th>15:00</th>
+                            <th>15:00</th>
+                       </tr> 
+                       <tr style="font-size:10px">
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th><a href="">Send Justification</a></th>
+                            <th></th>
+                            <th></th>
+                       </tr>
+                   </table>
+                <br />
+                <canvas id="myChart" style="width:100%;"></canvas>
+
+                
+                <br />
+                
+                <br />
+            </div>
+            <div style="width:30%; border-left-color:black;border-left-style:solid">
+                <br />
+                <table style="text-align:center;width:100%">
+                        <tr>
+                            <th style="border:none;font-size:40px"><</th>
+                        <th style="border:none;font-size:40px">@day</th>
+                            <th style="border:none;font-size:40px">-</th>
+                        <th style="border:none;font-size:40px">@Sun.AddDays(6).Day</th>
+                            <th style="border:none;font-size:40px">></th>
+                        </tr>
+                        <tr>
+                            <th style ="border:none;"></th>
+                            <th style="border:none;font-size:15px">@Sun.ToString("MMM")</th>
+                            <th style="border:none;"></th>
+                        <th style="border:none;font-size:15px">@Sun.AddDays(6).ToString("MMM")</th>
+                            <th style="border:none"></th>
+                        </tr> 
+                        <tr>
+                            <th style ="border:none;"></th>
+                        <th style="border:none;font-size:15px">@Sun.Year</th>
+                            <th style="border:none;"></th>
+                        <th style="border:none;font-size:15px">@Sun.Year</th>
+                            <th style="border:none"></th>
+                        </tr>
+                    </table>
+                    
+                <br /><br /><br />
+                <p>Total Hours :</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>

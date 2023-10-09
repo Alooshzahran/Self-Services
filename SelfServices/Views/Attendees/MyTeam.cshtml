@@ -1,0 +1,44 @@
+﻿@model List<DTO.Employee>
+<div style="padding:15px; float:left">
+    @*<a class="btn btn-success" href="@Url.Action("MainPage","SubscriperComplaint",new{ID=0})">
+        <span class="fa fa-plus">&nbsp;&nbsp;new attendance</span>
+    </a>*@
+</div>
+<table class="table table-striped table-bordered table-hover dataTables-example">
+
+    <thead>
+        <tr>
+            <th style="text-align:center">Member</th>
+            <th style="text-align:center">Name</th>
+            <th style="text-align:center">Attendance</th>
+            <th style="text-align:center">Information</th>
+            @*<th style="text-align:center">@Html.DisplayNameFor(mode =>mode.IsRTL)</th>*@
+            <th style="text-align:center" class="class=" col-sm-4 col-sm-offset-1 col-md-6 col-md-offset-1 col-lg-2 col-lg-offset-1"> <span>Justification Requested</span></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr id="tr_@employee.ID" class="gradeX">
+                
+                <td style="text-align:center">
+                    <img src="~/images/Photo Fixed.png">
+                </td>
+                <td style="text-align:center">
+                    @Html.DisplayFor(e=>employee.FirstName)
+                </td>
+                <td style="text-align:center">
+                    <a href="@Url.Action("MemberAttendance", "Attendees",new{ID = employee.ID})">View Attendance</a>
+                </td>
+                <td style="text-align:center">
+                    <a href="@Url.Action("MemberInformation", "Attendees",new{ID = employee.ID})">View Information</a>
+                </td>
+    
+                <td style="text-align:center" class="col-sm-4 col-sm-offset-1 col-md-6 col-md-offset-1 col-lg-2 col-lg-offset-1">
+                    <a style="text-decoration:underline" href="@Url.Action("MainPage","SubscriperComplaint",new{id=@employee.ID})">yes</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
